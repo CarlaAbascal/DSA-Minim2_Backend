@@ -3,6 +3,7 @@ package edu.upc.dsa;
 import edu.upc.dsa.exceptions.PasswordIncorrecteException;
 import edu.upc.dsa.exceptions.UserNameYaExiste;
 import edu.upc.dsa.exceptions.UserNotRegisteredException;
+import edu.upc.dsa.models.FAQ;
 import edu.upc.dsa.models.Product;
 import edu.upc.dsa.models.User;
 
@@ -17,4 +18,7 @@ public interface UserManager {
     public User changePassword(String username,String currentPassword, String newPassword) throws UserNotRegisteredException;
     public User getUser (String username);
     public User changeUsername(String username, String password, String newUsername) throws UserNotRegisteredException, PasswordIncorrecteException, UserNameYaExiste;
+
+
+    List<FAQ> getFAQs();
 }

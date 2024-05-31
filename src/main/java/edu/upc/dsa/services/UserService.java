@@ -6,6 +6,7 @@ import edu.upc.dsa.exceptions.PasswordIncorrecteException;
 import edu.upc.dsa.exceptions.UserNameYaExiste;
 import edu.upc.dsa.exceptions.UserNotRegisteredException;
 import edu.upc.dsa.models.Credencials;
+import edu.upc.dsa.models.FAQ;
 import edu.upc.dsa.models.Product;
 import edu.upc.dsa.models.User;
 import io.swagger.annotations.Api;
@@ -24,6 +25,7 @@ import java.util.List;
     public class UserService {
 
         private UserManager um;
+
 
         public UserService() throws UserNameYaExiste {
             this.um = UserManagerImpl.getInstance();
@@ -161,5 +163,18 @@ import java.util.List;
             }
 
 
+        }
+
+        @GET
+        @ApiOperation(value = "Obtain the FAQs", notes = "View FAQs")
+        @ApiResponses(value = {
+                @ApiResponse(code = 201, message = "Successful", response = FAQ.class, responseContainer = "List"),
+        })
+        @Path("/faqs")
+        @Produces(MediaType.APPLICATION_JSON)
+        public Response getFAQs(FAQ faq) {
+            List<FAQ> faqs = this.um.getFAQs();
+            GenericEntity<List<FAQ>> entity = new GenericEntity<List<FAQ>>(faqs) {};
+            return Response.status(201).entity(entity).build();
         }
     }

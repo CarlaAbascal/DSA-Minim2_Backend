@@ -3,6 +3,7 @@ package edu.upc.dsa;
 import edu.upc.dsa.exceptions.PasswordIncorrecteException;
 import edu.upc.dsa.exceptions.UserNameYaExiste;
 import edu.upc.dsa.exceptions.UserNotRegisteredException;
+import edu.upc.dsa.models.FAQ;
 import edu.upc.dsa.models.Product;
 import edu.upc.dsa.models.User;
 import org.apache.log4j.Logger;
@@ -16,6 +17,7 @@ public class UserManagerImpl implements UserManager{
     private HashMap<String, User> MapUsers;
     public List<User> listusers;
     //private HashMap<String, Product> inventario;
+    protected List<FAQ> faqs;
     final static Logger logger = Logger.getLogger(UserManagerImpl.class);
     UserManagerImpl(){
         this.listusers = new ArrayList<>();
@@ -30,7 +32,6 @@ public class UserManagerImpl implements UserManager{
         logger.info("size " + ret);
         return ret;
     }
-
 
     @Override
     public User registerUser(User user) throws UserNameYaExiste {
@@ -124,6 +125,19 @@ public class UserManagerImpl implements UserManager{
         throw new UserNotRegisteredException();
     }
 
+    @Override
+    public List<FAQ> getFAQs() {
+        return null;
+    }
+
+    public FAQ addFAQ(FAQ faq){
+        logger.info("Add FAQs...");
+        this.faqs.add(faq);
+        return faq;
+    }
+    public int FAQsNumber(){
+        return this.faqs.size();
+    }
 
 
 
