@@ -18,7 +18,6 @@ public interface UserManager {
     public User changePassword(String username,String currentPassword, String newPassword) throws UserNotRegisteredException;
     public User getUser (String username);
     public User changeUsername(String username, String password, String newUsername) throws UserNotRegisteredException, PasswordIncorrecteException, UserNameYaExiste;
-
-
     List<FAQ> getFAQs();
+    public FAQ addFAQ(FAQ faq);
 }

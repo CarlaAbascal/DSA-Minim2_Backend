@@ -22,6 +22,7 @@ public class UserManagerImpl implements UserManager{
     UserManagerImpl(){
         this.listusers = new ArrayList<>();
         this.MapUsers = new HashMap<>();
+        this.faqs = new ArrayList<>();
     }
     public static UserManager getInstance(){
         if (instance==null) instance = new UserManagerImpl();
@@ -127,7 +128,7 @@ public class UserManagerImpl implements UserManager{
 
     @Override
     public List<FAQ> getFAQs() {
-        return null;
+        return faqs;
     }
 
     public FAQ addFAQ(FAQ faq){
