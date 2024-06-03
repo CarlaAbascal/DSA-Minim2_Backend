@@ -34,9 +34,9 @@ import java.util.List;
                 um.registerUser(new User(2,"Anna","Fernandez","annaa11","56789"));
                 um.registerUser(new User(3,"Lidon","Garcia","lidon11","56789"));
                 um.registerUser(new User(4,"Lidia","Esquius","lidia22","12345"));
-                um.addFAQ(new FAQ("Prregunta1?", "Resposta1"));
-                um.addFAQ(new FAQ("Prregunta2?", "Resposta2"));
-                um.addFAQ(new FAQ("Prregunta3?", "Resposta3"));
+                um.addFAQ(new FAQ("Pregunta1?", "Resposta1"));
+                um.addFAQ(new FAQ("Pregunta2?", "Resposta2"));
+                um.addFAQ(new FAQ("Pregunta3?", "Resposta3"));
             }
 
         }
